@@ -13,9 +13,9 @@ echo "The doctor recommended you to drink 2 to 4 liters of water daily."
 read -p "How much water, in mililiters, have you drunk today? " w
 
 if [[ "$w" =~ ^[0-9]+$ ]]; then
-	if ((w <= l_limit)); then
+	if ((w < l_limit)); then
 		echo "You have not drunk enough water today. Check the recommendations."
-	elif ((w >= u_limit)); then
+	elif ((w > u_limit)); then
 		echo "You have drunk too much water today. Check the recommendations."
 	else
 		echo "You have drunk the recommended amount of water. Good job!"
