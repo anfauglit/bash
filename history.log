@@ -1,0 +1,1000 @@
+ 1218  man col
+ 1219  man tab
+ 1220  type column
+ 1221  man column
+ 1222  rand_word.sh -l adj | column
+ 1223  rand_word.sh -l adj | column -c 2
+ 1224  rand_word.sh -l adj | column -t 10
+ 1225  rand_word.sh -l adj | column -t
+ 1226  rand_word.sh -l adj | column -t -x
+ 1227  rand_word.sh -l adj | column -x
+ 1228  type paste
+ 1229  man paste
+ 1230  rand_word.sh -l adj | paste
+ 1231  rand_word.sh -l adj | paste -d " " ---
+ 1232  rand_word.sh -l adj | paste -d " " - - -
+ 1233  rand_word.sh -l adj | paste -d ' ' - - -
+ 1234  rand_word.sh -l adj | paste -d - - - -
+ 1235  rand_word.sh -l adj | paste - - - -
+ 1236  rand_word.sh -l adj | paste - - - - | column
+ 1237  rand_word.sh -l adj | paste - - - - | column -c 5
+ 1238  rand_word.sh -l adj | paste - - - - | column -t
+ 1239  rand_word.sh -l adj
+ 1240  rand_word.sh -l adv
+ 1241  rand_word.sh 40
+ 1242  rand_word.sh -l adv
+ 1243  vi exercises/adj_adv.md 
+ 1244  rand_word.sh -l adv
+ 1245  rand_word.sh -l adо
+ 1246  rand_word.sh -l adj
+ 1247  add_word.sh adv here brilliantly unhappily completely unclearly
+ 1248  add_word.sh adj comprehensible real right complete incredible possible hungry angry
+ 1249  add_word.sh adj fat poor
+ 1250  add_word.sh adv comprehensibly rightly really incredibly angrily definitely already completely cheaply
+ 1251  add_word.sh -r adj << EOF
+ 1252  Interested, bored, exicted etc. say how people feel.
+ 1253  Interesting, boring, exiting etc. describe the things (or people) that cause the feelings.
+ 1254  EOF
+ 1255  ls /mnt
+ 1256  rand_word.sh 60
+ 1257  rand_word.sh 60 >/mnt/o/words/words.txt 
+ 1258  type jot
+ 1259  jot
+ 1260  cd ~/bash
+ 1261  ls
+ 1262  seq 10
+ 1263  seq 9
+ 1264  seq 9 | wc -l
+ 1265  man read
+ 1266  man read.3
+ 1267  help read
+ 1268  read -d "" -a my_arr $(seq 9)
+ 1269  seq 9 | read -d "" -a my_arr
+ 1270  echo ${my_arr[@]}
+ 1271  read -d "" -a my_arr <<< "`seq 9`"
+ 1272  echo ${my_arr[@]}
+ 1273  >shuf_test.txt seq 9
+ 1274  cat shuf_test.txt 
+ 1275  file shuf_test.txt 
+ 1276  ll shuf_test.txt 
+ 1277  shuf -e {1..9}
+ 1278  shuf -e {1..9..2}
+ 1279  shuf -e {a..z}
+ 1280  man shuf
+ 1281  echo $(shuf -ze -n6 {A..Z} {a..z} {1..9})
+ 1282  echo $(shuf -e -n6 {A..Z} {a..z} {1..9})
+ 1283  man shuf
+ 1284  printf "\0"
+ 1285  printf "\0" | od
+ 1286  printf "\0\0\0a" | od
+ 1287  printf "\0\0\0a" | od -t d
+ 1288  printf "\0\0\0a" | od -t x
+ 1289  printf "\0\0\0a" | od -t d1
+ 1290  printf "\0\0\0a" | od -t x1
+ 1291  printf "\0\0\0a" | od -t x1z
+ 1292  man shuf
+ 1293  test="1 2
+ 1294  3 4
+ 1295  5 6"
+ 1296  echo $test
+ 1297  echo $IFS
+ 1298  echo $IFS | od -t x1z
+ 1299  man od 
+ 1300  echo $IFS | od -t x1z -A x
+ 1301  echo $IFS | od -t x1z -A d
+ 1302  man ascii
+ 1303  echo "$IFS" | od -t x1z
+ 1304  echo $test
+ 1305  ?#
+ 1306  $#
+ 1307  echo $#
+ 1308  echo $test
+ 1309  echo $#
+ 1310  echo "$test"
+ 1311  echo $(shuf -e $test)
+ 1312  echo $(shuf -e "$test")
+ 1313  shuf <<< "$test"
+ 1314  shuf <<< $test
+ 1315  echo "$test"
+ 1316  echo "$test" | tr "\n" " "
+ 1317  echo -n "$test" | tr "\n" " "
+ 1318  help read
+ 1319  read w 
+ 1320  echo $w
+ 1321  read w hello\t\nworld
+ 1322  echo "$w"
+ 1323  read w hello\t\tworld
+ 1324  read w
+ 1325  echo "$w"
+ 1326  read -r w
+ 1327  echo "$w"
+ 1328  1>&2 echo "hello"
+ 1329  man cat
+ 1330  str="Remove Vowels from a String"
+ 1331  echo "${str//[aAeEiIoOuUyY]}
+ 1332  "
+ 1333  echo -n "${str//[aAeEiIoOuUyY]}"
+ 1334  echo "${str//[aAeEiIoOuUyY]}"
+ 1335  vowels=aAeEiIoOuUyY
+ 1336  tr -d $vowels <<< $str
+ 1337  tr -d $vowels 12345 << $str
+ 1338  tr -d $vowels 12345 <<< $str
+ 1339  tr $vowels 12345 <<< $str
+ 1340  printf "%s\n" $str; tr $vowels 12345 <<< $str
+ 1341  printf "%s\n" "$str"; tr $vowels 12345 <<< $str
+ 1342  printf "%s\n" "$str"; tr $vowels _ <<< $str
+ 1343  tr -d $vowels <<< $str
+ 1344  ifconfig
+ 1345  ifconfig | grep inet
+ 1346  ifconfig | grep inet[^[:digit:]]
+ 1347  ifconfig | grep inet[^[:digit:]] | cut -f 2
+ 1348  ifconfig | grep inet[^[:digit:]] | cut -f 2 -d " "
+ 1349  ifconfig | grep inet[^[:digit:]] | cut -d " " -f 2
+ 1350  ifconfig | grep inet[^[:digit:]] | cut -d " " -f 3
+ 1351  ifconfig | grep inet[^[:digit:]] | od -x1z
+ 1352  ifconfig | grep inet[^[:digit:]] | od -t x1z
+ 1353  ifconfig | grep inet[^[:digit:]] | cut -d " " -f 4
+ 1354  ifconfig | grep inet[^[:digit:]] | cut -d " " -f 5
+ 1355  ifconfig | grep inet[^[:digit:]] | cut -d " " -f 1-6
+ 1356  ifconfig | grep inet[^[:digit:]] | cut -d "." -f1-6
+ 1357  ifconfig | grep inet[^[:digit:]] | cut -d ' ' -f 2
+ 1358  ifconfig | grep inet[^[:digit:]] | cut -d ' ' -f 2-6
+ 1359  ifconfig | grep inet[^[:digit:]]
+ 1360  ifconfig | grep inet[^[:digit:]] | cut -d ' ' -f 2-10
+ 1361  ifconfig | grep 
+ 1362  ifconfig | grep inet[^[:digit:]] | tr -s " " | cut -d " " -f 3
+ 1363  ifconfig | grep inet[^[:digit:]] | tr -s " " | cut -d " " -f 3 | tail -1
+ 1364  my_ip=$(ifconfig | grep inet[^[:digit:]] | tr -s " " | cut -d " " -f 3 | tail -1)
+ 1365  echo $my_ip 
+ 1366  echo "${my_ip//./\[.]}"
+ 1367  for i in {1..5}; do echo $my_ip; done >my_ips.txt
+ 1368  cat my_ips.txt 
+ 1369  op_set="++x x++ --x x--"
+ 1370  shuf -e $op_set
+ 1371  shuf -e "$op_set"
+ 1372  shuf <<< $(printf "%s\n" $op_set)
+ 1373  shuf -r -n 10 <<< $(printf "%s\n" $op_set)
+ 1374  type join
+ 1375  :history
+ 1376  :h
+ 1377  history
+ 1378  shuf -r -n 10 <<< $(printf "%s\n" $op_set)
+ 1379  shuf -r -n 10 <<< $(printf "%s\n" $op_set) | tr "\n" ","
+ 1380  shuf -r -n 10 <<< $(printf "%s\n" $op_set)
+ 1381  mapfile -t commands < <(shuf -r -n 10 <<< $(printf "%s\n" $op_set))
+ 1382  echo ${commands[@]}
+ 1383  my_expr="+1 +1 -1 -1"
+ 1384  echo $((my_expr))
+ 1385  my_expr="+1 +1 -1 -1 +5 -6"
+ 1386  echo $((my_expr))
+ 1387  echo $((${commands[@]}))
+ 1388  type let
+ 1389  help let
+ 1390  let $((my_expr))
+ 1391  echo $x
+ 1392  let ${commands[@]}
+ 1393  echo $x
+ 1394  let ${commands[@]}
+ 1395  echo $x
+ 1396  let x=0 ${commands[@]}
+ 1397  let x=0 ${commands[@]}; echo $x
+ 1398  echo ${commands[@]/x}
+ 1399  echo ${commands[@]/x} | tr -s
+ 1400  echo ${commands[@]/x} | tr -s "-+"
+ 1401  echo ${commands[@]/x} | tr -s [-+]
+ 1402  jewels="aA" stones="aAAbbbb"
+ 1403  echo ${#jewels}
+ 1404  expr ${#stones} - (length `tr -d "$jewels" <<< $stones`)
+ 1405  expr ${#stones} - ( length `tr -d "$jewels" <<< $stones` )
+ 1406  expr ${#stones} - ${#`length `tr -d "$jewels" <<< $stones`}
+ 1407  expr ${#stones} - ${#`tr -d "$jewels" <<< $stones`}
+ 1408  expr length $stones
+ 1409  expr ${#stones} - length `tr -d "$jewels" <<< $stones`
+ 1410  jewels=z stones=ZZ
+ 1411  expr ${#stones} - length `tr -d "$jewels" <<< $stones`
+ 1412  sentences=("alice and bob love leetcode" "i think so too" "this is great thanks very much")
+ 1413  echo sentences[1]
+ 1414  echo ${sentences[1]}
+ 1415  for s in ${sentences[@]}; do
+ 1416  wc -w <<< $s; done
+ 1417  for s in "${sentences[@]}"; do
+ 1418  wc -w <<< $s; done
+ 1419  for s in "${sentences[@]}"; do
+ 1420  wc -w <<< $s; done | sort 
+ 1421  for s in "${sentences[@]}"; do
+ 1422  wc -w <<< $s; done | sort | head -1
+ 1423  for s in "${sentences[@]}"; do
+ 1424  wc -w <<< $s; done | sort -r | head -1
+ 1425  rand_word.sh 60
+ 1426  ls /mnt
+ 1427  ls /mnt/o
+ 1428  history
+ 1429  history | grep mount
+ 1430  sudo mount O: /mnt/o
+ 1431  ls /mnt/o
+ 1432  sudo mount -t drvfs O: /mnt/o
+ 1433  ls /mnt/o
+ 1434  rand_word.sh 60
+ 1435  rand_word.sh 60 >/mnt/o/words/words.txt 
+ 1436  cat /mnt/o/words/words.txt 
+ 1437  bash
+ 1438  man bash
+ 1439  man tr
+ 1440  ls
+ 1441  cat rand.txt 
+ 1442  tr -d f <rand.txt 
+ 1443  tr -d e <rand.txt 
+ 1444  <rand.txt tr [:lower:] [:upper:]
+ 1445  man tr
+ 1446  echo Welcom to GeeksforGeeks | tr [:space:] \t
+ 1447  echo Welcom to GeeksforGeeks | tr [:space:] $'\t'
+ 1448  echo Welcom to GeeksforGeeks | tr [:space:] "\t"
+ 1449  echo Welcom to GeeksforGeeks | tr [:space:] "\t" | od -t x1z
+ 1450  man ascii
+ 1451  echo Welcome to GeeksforGeeks | tr " " "\t" | od -t x1z
+ 1452  echo Welcome to GeeksforGeeks | tr " " "\t" 
+ 1453  echo "a$'\t'b"
+ 1454  echo a$'\t'b
+ 1455  tr " " "\t" <<< Welcome to GeeksforGeeks
+ 1456  tr " " "\t" <<< "Welcome to GeeksforGeeks"
+ 1457  man tr
+ 1458  tr f t rand.txt 
+ 1459  tr f t <rand.txt >new_rand.txt
+ 1460  man cat
+ 1461  cat <<EOF >greekfile
+ 1462  {WELCOME TO}
+ 1463  GeeksforGeeks
+ 1464  EOF
+ 1465  cat greekfile 
+ 1466  echo {}
+ 1467  echo {1..5}
+ 1468  echo {1}
+ 1469  echo {1,2}
+ 1470  echo ()
+ 1471  echo ();
+ 1472  echo ( ; )
+ 1473  echo; ()
+ 1474  echo ; ()
+ 1475  ()
+ 1476  ( )
+ 1477  (echo)
+ 1478  echo (echo)
+ 1479  echo; (echo)
+ 1480  tr "{}" "()" <greekfile >tr_greekfile
+ 1481  cat greekfile <(echo "----") tr_greekfile 
+ 1482  cat greekfile echo "----" tr_greekfile 
+ 1483  cat greekfile <<< "---" tr_greekfile 
+ 1484  cat greekfile tr_greekfile 
+ 1485  tr -d 'w' <<<"Welcome to GeeksforGeeks"
+ 1486  tr -d 'W' <<<"Welcome to GeeksforGeeks"
+ 1487  printf "Welcome\t\tto\t\tGeeksforGeeks\n" | tr -s " "
+ 1488  printf "Welcome\t\tto\t\tGeeksforGeeks\n" | tr -s "\t"
+ 1489  printf "Welcome\t\t        to\t\t   GeeksforGeeks\n" | tr -s " "
+ 1490  printf "Welcome        to   GeeksforGeeks\n" | tr -s " "
+ 1491  man tr
+ 1492  tr [a-z] [b-z]a <<< "Hello world!"
+ 1493  ' <<< "HELLO   WORLDkkkkkppp   !"
+ 1494  tr -cd "[:digit:]\n" <<< "Your pint is: 1234."
+ 1495  tr -c [:alnum:] "\n" <<< "Welcome to phoenixNAP!"
+ 1496  tr -cs [:alnum:] "\n" <<< "Welcome to phoenixNAP!"
+ 1497  cd 
+ 1498  ls
+ 1499  cd eng
+ 1500  ls
+ 1501  mkdir {be,have}
+ 1502  ll
+ 1503  vi be/rules.md
+ 1504  cat << EOF | tr -s '\n'
+ 1505  hello
+ 1506  world
+ 1507  hello
+ 1508  again
+ 1509  and again
+ 1510  EOF
+ 1511  vi be/rules.md
+ 1512  vi s_text.txt
+ 1513  ls
+ 1514  man bash
+ 1515  man printf
+ 1516  man tr
+ 1517  man uniq
+ 1518  man cut
+ 1519  man grep
+ 1520  man sort
+ 1521  add_word.sh noun car breakfast time cold people house friend brother school party mother lunch
+ 1522  add_word.sh noun sister shower nephew room journey hair girlfriend bicycle bed week office morning money job home holiday headache garden family egg door cat university uncle toast tennis sunday shop
+ 1523  relationship night niece lesson flight evening dog dinner computer clothes children clock car boyfriend bath aunt year work wing weekend way voice verb trip ticket tee taxi sweater student street station son sleep shoe secretary saturday room problem policemen plane phone pen pencil page number music mountain motorcycle manager letter leg language
+ 1524  add_word.sh noun relationship night niece lesson flight evening dog dinner computer clothes children clock car boyfriend bath aunt year work wing weekend way voice verb trip ticket tee taxi sweater student street station son sleep shoe secretary saturday room problem policemen plane phone pen pencil page number music mountain motorcycle manager letter leg language
+ 1525  cd
+ 1526  cd bin
+ 1527  ls
+ 1528  vi scrap.py
+ 1529  add_word.sh noun string command output token delimiter document character code substitution example syntax parameter line variable prefix content block value user quote function experience shell script operator
+ 1530  add_word.sh adj special several similar other single remote interpreted interactive followed escaped
+ 1531  add_word.sh adv also however whenever thereby finally essentially 
+ 1532  add_word.sh noun input functionality form addition year version usage tab system redirection reason overview guidelines 
+ 1533  man paste
+ 1534  basename -s .txt $(ls ~/eng/adjectives/*.txt)
+ 1535  basename -s .txt $(ls ~/eng/adjectives/*.txt) | shuf -n20
+ 1536  rand_col.sh 
+ 1537  ll
+ 1538  rm 'rand_col.sh!' 
+ 1539  ll
+ 1540  rm rand_co
+ 1541  ll
+ 1542  rand_col.sh 
+ 1543  man paste
+ 1544  rand_col.sh 
+ 1545  ls /mnt
+ 1546  rand_col.sh >/mnt/o/words/words2.txt
+ 1547  ll
+ 1548  ll ~/bash
+ 1549  cd ~/bash
+ 1550  ls
+ 1551  ll
+ 1552  vi add_int.sh 
+ 1553  cd ~/eng
+ 1554  ll
+ 1555  cd
+ 1556  ll
+ 1557  cd eng
+ 1558  ls
+ 1559  ls */*.sh
+ 1560  ls *
+ 1561  cd ~/bin
+ 1562  vi add_list_numbers.awk
+ 1563  ll
+ 1564  mkdir ~/eng/verbs
+ 1565  rand_col.sh 
+ 1566  ls ~/eng
+ 1567  man history
+ 1568  add_word.sh verb play want like live work speak need train start
+ 1569  rand_col.sh 
+ 1570  vi rand_col.sh 
+ 1571  add_word.sh verb know cost use think stop remember read rain get come talk phone open go enjoy wear wait watch study
+ 1572  add_word.sh noun time train parent football children
+ 1573  add_word.sh noun word people tennis sunday phone party lesson music golf fathercat basketball ticket sun station
+ 1574  add_word.sh adj very beautiful classical small 
+ 1575  add_word.sh verb stay start stand spend spell speak snow smoke slim sit sing shout set sell say run rob rise ride read rain put push pronounce
+ 1576  add_word.sh noun tea supermarket sunday summer son snow smoke sister shop shoe rain radio question
+ 1577  ll
+ 1578  rand_col.sh 
+ 1579  rand_col.sh >/mnt/o/words/words3.txt
+ 1580  type tr
+ 1581  hash
+ 1582  type type
+ 1583  help type
+ 1584  type add_word.sh 
+ 1585  type ls
+ 1586  type grep
+ 1587  type man
+ 1588  type -P grep
+ 1589  type -P echo
+ 1590  type -P type
+ 1591  type -p grep
+ 1592  man sed
+ 1593  man sed!
+ 1594  !
+ 1595  man sed
+ 1596  s="hello world"
+ 1597  echo $s
+ 1598  sed -n 's/$s/&/p' <<< "$s"
+ 1599  x='$s hello'
+ 1600  echo $x
+ 1601  sed -n 's/$s/&/p' <<< "$x"
+ 1602  sed -n "s/$s/&/p" <<< "$s"
+ 1603  echo -e "hello\t\t
+ 1604  world"
+ 1605  echo -e "hello\t\t\tworld"
+ 1606  echo -e "hello\t\t\tworld" | sed 's/[[:blank:]]*//g'
+ 1607  echo "hello world" | sed 'y/[[:lower:]]/[[:upper:]]/'
+ 1608  man sed
+ 1609  str='http://s.thebrighttag.com/iframe?c=A5lqOqP
+ 1610  http://s.wordpress.com/imgpress?resize=136,136&amp;url=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2833524%2F4thofJuly-collage_large.jpg%3F1278084193'
+ 1611  echo $str
+ 1612  echo "$str"
+ 1613  echo "$str" | sed -e 's/.jpg//I' -e 's/.png//I'
+ 1614  echo "$str" | sed -e '/.jpg/I d' -e '/.png/I d'
+ 1615  echo "$str" | sed ' {\
+ 1616  echo "$str" | sed '/.jpg/I d \
+ 1617  /.png/I d'
+ 1618  echo "$str" | sed '/.jpg/I d\
+ 1619  /.png/I d'
+ 1620  echo "$str" | sed '/.jpg/I d
+ 1621  /.png/I d'
+ 1622  echo "$str" | sed '/.jpg/I !p
+ 1623  /.png/I !p'
+ 1624  echo -n "$str" | sed '/.jpg/I !p
+ 1625  /.png/I !p'
+ 1626  echo "$str" | sed '/.jpg/I !p
+ 1627  /.png/I !p'
+ 1628  echo "$str" | sed -n '/.jpg/I !p
+ 1629  /.png/I !p'
+ 1630  echo {A..Z}
+ 1631  man shuf
+ 1632  shuf -ren20 {A..Z}
+ 1633  shuf -ren20 {A..Z} | tr -d "\n"
+ 1634  shuf -ren20 {A..Z} | tr -d "\4"a
+ 1635  shuf -ren40 {A..Z} | tr -d "\n"
+ 1636  shuf -ren40 {A..Z} " " | tr -d "\n"
+ 1637  -d "\n"
+ 1638  shuf -ren40 {A..Z} | tr -d "\n"
+ 1639  shuf -ren40 {A..Z} >holes.txt
+ 1640  cat holes.txt 
+ 1641  shuf -ren40 {A..Z} | tr -d "\n" >holes.txt
+ 1642  cat holes.txt 
+ 1643  echo {A..Z}
+ 1644  echo ${#$(tr -cd [ADOPQ])}
+ 1645  echo ${#$(<holes.txt tr -cd [ADOPQ])}
+ 1646  <holes.txt tr -cd [ADOPQ]
+ 1647  expr length $(<holes.txt tr -cd [ADOPQ])
+ 1648  expr length $(<holes.txt tr -cd [ADOPQB])
+ 1649  expr length $(<holes.txt tr -cd [ADOPQB]) + length $(<holes.txt tr -cd B)
+ 1650  expr length $(<holes.txt tr -cd [ADOPQB]) + length "$(<holes.txt tr -cd B)"
+ 1651  shuf -ren40 {A..Z} | tr -d "\n" >holes.txt
+ 1652  expr length $(<holes.txt tr -cd [ADOPQB]) + length "$(<holes.txt tr -cd B)"
+ 1653  cat holes.txt 
+ 1654  sed 's/[^ADOPR]/#/g
+ 1655  sed 's/[^ADOPRB]//g
+ 1656  s/B/BB/g' <holes.txt
+ 1657  sed 's/[^ADOPRB]//g
+ 1658  s/B/BB/g' <holes.txt
+ 1659  sed 's/[^ADOPRB]//g
+ 1660  s/B/BB/g' <holes.txt | wc -c
+ 1661  cd ~/eng/exercises/
+ 1662  cd ..
+ 1663  ls present
+ 1664  vi present/rules.md 
+ 1665  history
+ 1666  rand_col.sh >/mnt/o/words/words3.txt
+ 1667  tr -dc A-Za-z0-9_\!\@\#\$\%\^\&\*\(\)-+= < /dev/urandom | head -c 32 
+ 1668  man head
+ 1669  vi present/rules.md 
+ 1670  cd
+ 1671  pwd
+ 1672  test_str="animal: dog"
+ 1673  sed 's/://' <<< $test_str
+ 1674  man dd
+ 1675  test_str="test.txt"
+ 1676  sed 's/./_/g' <<< $test_str
+ 1677  sed 's/\./_/g' <<< $test_str
+ 1678  desktops="1 2 %{F#990000}3%{F-} 4 5 6 7 8 9 0"
+ 1679  echo $desktops
+ 1680  foc=9
+ 1681  sed 's/[^[:digit:]]'"$foc"'[^[:digit:]]/%{F#FFFF00}'"$foc"'%{F-}/' <<< #desktops
+ 1682  sed 's/[^[:digit:]]'"$foc"'[^[:digit:]]/%{F#FFFF00}'"$foc"'%{F-}/' <<< $desktops
+ 1683  foc=6
+ 1684  sed 's/[^[:digit:]]'"$foc"'[^[:digit:]]/%{F#FFFF00}'"$foc"'%{F-}/' <<< $desktops
+ 1685  sed 's/[^[:digit:]]'"$foc"'[^[:digit:]]/ %{F#FFFF00}'"$foc"'%{F-} /' <<< $desktops
+ 1686  foc=0
+ 1687  sed 's/[^[:digit:]]'"$foc"'[^[:digit:]]/ %{F#FFFF00}'"$foc"'%{F-} /' <<< $desktops
+ 1688  foc=1
+ 1689  sed 's/[^[:digit:]]'"$foc"'[^[:digit:]]/ %{F#FFFF00}'"$foc"'%{F-} /' <<< $desktops
+ 1690  sed -E 's/(^|[^[:digit:]])'"$foc"'[^[:digit:]]/ %{F#FFFF00}'"$foc"'%{F-} /' <<< $desktops
+ 1691  foc=5
+ 1692  sed -E 's/(^|[^[:digit:]])'"$foc"'[^[:digit:]]/ %{F#FFFF00}'"$foc"'%{F-} /' <<< $desktops
+ 1693  type od
+ 1694  man type
+ 1695  type type
+ 1696  help type
+ 1697  type -a od
+ 1698  help od
+ 1699  man od
+ 1700  cd eng
+ 1701  ls
+ 1702  od idioms.md 
+ 1703  add_word.sh adj common
+ 1704  add_word.sh adj above
+ 1705  man od
+ 1706  vi ~/bin/rand_word.sh 
+ 1707  man column
+ 1708  vi ~/bin/rand_word.sh 
+ 1709  man column
+ 1710  vi ~/bin/rand_word.sh 
+ 1711  add_word.sh -adj fast hard late early daily weekly monthly
+ 1712  add_word.sh -adv fast hard late early daily weekly monthly
+ 1713  rand_word.sh -l adj
+ 1714  add_word.sh adj fast hard late early daily weekly monthly
+ 1715  add_word.sh adv fast hard late early daily weekly monthly
+ 1716  add_word.sh adv hardly lately
+ 1717  add_word.sh adj friendly lonely lovely silly
+ 1718  add_word.sh -r adj
+ 1719  vi ~/bin/add_word.sh 
+ 1720  cat adjectives/rules.md 
+ 1721  cat adverbs/rules.md 
+ 1722  man od
+ 1723  man ascii
+ 1724  man bash
+ 1725  echo {a-z}
+ 1726  echo {a..z}
+ 1727  man tr
+ 1728  man cut
+ 1729  man tr
+ 1730  man join
+ 1731  man mapfile
+ 1732  help mapfile
+ 1733  man grep
+ 1734  man expr
+ 1735  man bash
+ 1736  man tr
+ 1737  man expr
+ 1738  man wc
+ 1739  history | grep mount
+ 1740  man bash
+ 1741  man tr
+ 1742  man bash
+ 1743  man tr
+ 1744  man bash
+ 1745  man tr
+ 1746  man bash
+ 1747  cat quotes.txt 
+ 1748  add_word.sh adj late well happy tired small ready
+ 1749  add_word.sh adj closed married cold ill tall nice big fast
+ 1750  add_word.sh adj hungry thirsty afraid wrong right large interested
+ 1751  ls /mnt
+ 1752  sudo mount -t drvfs O: /mnt/o
+ 1753  ls /mnt
+ 1754  rand_word.sh 60 >/mnt/o/words/words.txt 
+ 1755  vi ~/bin/add_word.sh 
+ 1756  mkdir nouns
+ 1757  add_word.sh noun glasses exam watch hospital winter summer university office
+ 1758  vi ~/bin/add_word.sh 
+ 1759  add_word.sh noun glasses exam watch hospital winter summer university office
+ 1760  vi ~/bin/add_word.sh 
+ 1761  add_word.sh noun glasses exam watch hospital winter summer university office
+ 1762  ls nouns/
+ 1763  add_word.sh adv yesterday actually
+ 1764  add_word.sh adj last
+ 1765  add_word.sh adj full next
+ 1766  add_word.sh noun lesson time lunch breakfast government problem class supper trouble summer
+ 1767  add_word.sh adv tonight perhaps
+ 1768  man tr
+ 1769  tr aaa bcd <<< "aaa"
+ 1770  man tr
+ 1771  man cat
+ 1772  cat -
+ 1773  cat --
+ 1774  help --
+ 1775  help "--"
+ 1776  tr abc <<< "hello world"
+ 1777  man tr
+ 1778  man uniq
+ 1779  echo $PATH
+ 1780  tr : "\n" <<< $PATH
+ 1781  tr : "\n" <<< $PATH | uniq
+ 1782  tr : "\n" <<< $PATH | uniq -c
+ 1783  man uniq
+ 1784  tr : "\n" <<< $PATH | uniq -c -w 4
+ 1785  man ascii
+ 1786  man tr
+ 1787  type ascii
+ 1788  man tr
+ 1789  man  od
+ 1790  printf "\15" | od -x1z
+ 1791  printf "\15" | od -t x1z
+ 1792  printf "\15" | od -t 1z
+ 1793  man od
+ 1794  printf "\15" | od -t o1z
+ 1795  man od
+ 1796  printf "\15" | od -t o1zc
+ 1797  printf "\15\n\r\t" | od -t o1zc
+ 1798  printf "\15\n\r\thello" | od -t o1zc
+ 1799  tr -d <<< hello
+ 1800  echo "hello" | tr -d
+ 1801  echo $?
+ 1802  man tr
+ 1803  ls
+ 1804  ls >ft
+ 1805  cat ft
+ 1806  wc -l fx
+ 1807  wc -l <fx
+ 1808  wc -l ft
+ 1809  wc -l <ft
+ 1810  man wc
+ 1811  tail -15 ft
+ 1812  ls adverbs/ >ft
+ 1813  ls adverbs/ | cut -d. -f1
+ 1814  ls adverbs/ | cut -d. -f1 | shuf -n10
+ 1815  ls adverbs/ | cut -d. -f1 | shuf -n25
+ 1816  ls adverbs/ | cut -d. -f1 | shuf -n25 >ft
+ 1817  cat ft
+ 1818  cp ft ft2
+ 1819  ll ft
+ 1820  ll ft*
+ 1821  tail -15 ft2 | { tr e 1 >ft2; }
+ 1822  cat ft2
+ 1823  ll ft*
+ 1824  cp ft ft2
+ 1825  ll ft*
+ 1826  tail -15 ft2 | { tr e 1 >ft2; )
+ 1827  tail -15 ft2 | (tr e 1 >ft2)
+ 1828  ll ft*
+ 1829  type sed
+ 1830  man sed
+ 1831  type dd
+ 1832  man -k dd
+ 1833  man dd
+ 1834  type tee
+ 1835  man tee
+ 1836  ls
+ 1837  ls *.txt
+ 1838  cat tmp.txt 
+ 1839  ls ft*
+ 1840  rm ft*
+ 1841  ls
+ 1842  vi
+ 1843  ls
+ 1844  man printf
+ 1845  type local
+ 1846  help local
+ 1847  ls be/ have/
+ 1848  cat ~/bin/add_word.sh 
+ 1849  vi have/rules.md 
+ 1850  cd have/
+ 1851  ls
+ 1852  tr -sc "[:alpha:]" "\n" <rules.md 
+ 1853  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:]
+ 1854  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | uniq
+ 1855  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | uniq -c
+ 1856  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | uniq -c | less
+ 1857  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | uniq
+ 1858  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | sort
+ 1859  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | sort | uniq -c
+ 1860  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | sort | uniq -c | sort -n
+ 1861  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | sort | uniq -c | sort -nr
+ 1862  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | sort | uniq -c | sort -nr | less
+ 1863  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | grep '^.{3-}$'
+ 1864  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | grep '^[:alpha:]{3,}$'
+ 1865  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | grep '^[[:alpha:]]{3,}$'
+ 1866  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | grep '[[:alpha:]]{3,}'
+ 1867  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | grep -e '[[:alpha:]]{3,}'
+ 1868  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | grep -e '.{3,}'
+ 1869  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] 
+ 1870  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | grep ".{3,}"
+ 1871  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | grep -e ".{3,}"
+ 1872  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | grep -E ".{3,}"
+ 1873  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | grep -E ".{3,}" | sort -u
+ 1874  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | grep -E ".{3,}" | sort -u | uniq -c
+ 1875  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | grep -E ".{3,}" | sort -u | uniq -c | sort -nr
+ 1876  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | sort -u | 
+ 1877  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | sort -u | uniq -c | sort -nr
+ 1878  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | sort -u | uniq -c | less
+ 1879  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | sort | unic -c
+ 1880  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | sort | uniq -c
+ 1881  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | sort | uniq -c | sort -nr
+ 1882  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | sort | uniq -c | sort -nr | less
+ 1883  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | sort | uniq -c | sort -nr | grep -E '[[:alpha:]]{3,}$'
+ 1884  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | sort | uniq -c | sort -nr | grep -E '[[:alpha:]]{3,}$' | less
+ 1885  tr -sc "[:alpha:]" "\n" <rules.md | tr [:upper:] [:lower:] | sort | uniq -c | sort -nr | grep -E '[[:alpha:]]{3,}$' >result.txt
+ 1886  less result.txt 
+ 1887  cd
+ 1888  python3
+ 1889  cd bin
+ 1890  python3 scrap.py 
+ 1891  pip
+ 1892  pip3
+ 1893  pip3 list
+ 1894  pip3 list | less
+ 1895  pip3 install beautifulsoup4
+ 1896  pip3 list | less
+ 1897  python3 scrap.py 
+ 1898  python3 scrap.py | less
+ 1899  python3 scrap.py
+ 1900  python3 scrap.py | less
+ 1901  python3 scrap.py >tr_test.txt
+ 1902  less tr_test.txt 
+ 1903  python3 scrap.py >tr_test.txt
+ 1904  <tr_test.txt uniq
+ 1905  vi tr_test.txt 
+ 1906  tr -sc "[:alpha:]" "\n" <tr_test.txt | tr [:upper:] [:lower:] | sort | uniq -c | sort -nr | grep -E '[[:alpha:]]{3,}$' >here_result.txt
+ 1907  less here_result.txt 
+ 1908  cat rand_word.sh 
+ 1909  ll
+ 1910  >rand_col.sh
+ 1911  chmod +x rand_col.sh 
+ 1912  vi rand_co
+ 1913  rm rand_co
+ 1914  vi rand_col.sh 
+ 1915  cd 
+ 1916  cd eng
+ 1917  ll
+ 1918  ll | grep ^d
+ 1919  mkdir present
+ 1920  vi present/rules.md
+ 1921  vi ~/bin/add_word.sh 
+ 1922  cd present/
+ 1923  ls
+ 1924  history
+ 1925  type local :p
+ 1926  -sc "[:alpha:]" "\n" < rules.md | tr [:upper:] [:lower:] | sort | uniq -c | sort -nr | grep -E '[[:alpha:]]{3,}$' > result.txt :p
+ 1927  tr -sc "[:alpha:]" "\n" < rules.md | tr [:upper:] [:lower:] | sort | uniq -c | sort -nr | grep -E '[[:alpha:]]{3,}$' > result.txt :p
+ 1928  tr -sc "[:alpha:]" "\n" < rules.md | tr [:upper:] [:lower:] | sort | uniq -c | sort -nr | grep -E '[[:alpha:]]{3,}$' > result.txt
+ 1929  less result.txt 
+ 1930  history
+ 1931  sudo mount -t drvfs O: /mnt/o
+ 1932  cd eng
+ 1933  l
+ 1934  mkdir subs && cd subs
+ 1935  ls /mnt/c
+ 1936  ls 
+ 1937  ls /mnt/c/Users/Cross/Downloads/
+ 1938  cp /mnt/c/Users/Cross/Downloads/sharktank.txt
+ 1939  cp /mnt/c/Users/Cross/Downloads/sharktank.txt .
+ 1940  ll
+ 1941  vi sharktank.txt 
+ 1942  history | less
+ 1943  tr -sc "[:alpha:]" "\n" < rules.md | tr [:upper:] [:lower:] | sort | uniq -c | sort -nr | grep -E '[[:alpha:]]{3,}$' > result.txt :p
+ 1944  tr -sc "[:alpha:]" "\n" < sharktank.txt | tr [:upper:] [:lower:] | sort | uniq -c | sort -nr | grep -E '[[:alpha:]]{3,}$' > result.txt
+ 1945  vi result.txt 
+ 1946  type tac
+ 1947  man tac
+ 1948  git help log
+ 1949  a='/o\\'
+ 1950  echo $a
+ 1951  b='/o\'
+ 1952  echo $b
+ 1953  sed 's_/_\_' <<$a
+ 1954  sed 's_/_\_' <<< "$a"
+ 1955  sed 's_/_\\_' <<< "$a"
+ 1956  echo "$a"
+ 1957  sed 's_/_\\_
+ 1958  s_\\_/_g' <<< "$a"
+ 1959  sed 's_/_\\_
+ 1960  s_\\_/_g' <<< "$b"
+ 1961  tr '/\
+ 1962  ' '\/' <<< "$b"
+ 1963  tr '/\\' '\\/' <<< "$b"
+ 1964  cd ..
+ 1965  ls
+ 1966  git status
+ 1967  git log 
+ 1968  git log --graph
+ 1969  sudo apt-get update && apt-get upgrade -y
+ 1970  sudo apt-get upgrade -y
+ 1971  cd eng
+ 1972  vi present/rules.md 
+ 1973  cd ..
+ 1974  history
+ 1975  tr -sc "[:alpha:]" "\n" < rules.md | tr [:upper:] [:lower:] | sort | uniq -c | sort -nr | grep -E '[[:alpha:]]{3,}$' > result.txt :p
+ 1976  tr -sc "[:alpha:]" "\n" < rules.md | tr [:upper:] [:lower:] | sort | uniq -c | sort -nr | grep -E '[[:alpha:]]{3,}$' > result.txt 
+ 1977  cd present/
+ 1978  ls
+ 1979  tr -sc "[:alpha:]" "\n" < rules.md | tr [:upper:] [:lower:] | sort | uniq -c | sort -nr | grep -E '[[:alpha:]]{3,}$' > result.txt 
+ 1980  vi resu
+ 1981  vi result.txt 
+ 1982  sudo mount -t drvfs O: /mnt/o
+ 1983  type diff
+ 1984  man diff
+ 1985  type comm
+ 1986  man comm
+ 1987  cd ~/bin
+ 1988  ls
+ 1989  cd ~/eng
+ 1990  ls
+ 1991  ll | grep '^d'
+ 1992* 
+ 1993  ll | grep '^d'
+ 1994  mkdir voc && cd voc
+ 1995  ls
+ 1996  ls ~/bin
+ 1997  vi ~/bin/scrap.py 
+ 1998  python3 scrap.py 'https://www.geeksforgeeks.org/shuf-command-in-linux-with-examples/'
+ 1999  echo $PATH
+ 2000  python3 ~/bin/scrap.py 'https://www.geeksforgeeks.org/shuf-command-in-linux-with-examples/' | tr -s '\n'
+ 2001  python3 ~/bin/scrap.py 'https://www.geeksforgeeks.org/shuf-command-in-linux-with-examples/' | tr -s '\n' >gfg.txt
+ 2002  cat gfg.txt 
+ 2003  python3 ~/bin/scrap.py 'https://www.geeksforgeeks.org/shuf-command-in-linux-with-examples/' | tr -s '\n' >linuxhint.txt
+ 2004* vi linuxhint.txt p
+ 2005  python3 ~/bin/scrap.py 'https://linuxhint.com/bash_shuf_command/' | tr -s '\n' >linuxhint.txt
+ 2006  vi linuxhint.txt 
+ 2007  python3 ~/bin/scrap.py 'https://shapeshed.com/unix-shuf/' | tr -s '\n' >shapeshed.txt
+ 2008  history | less
+ 2009  ll
+ 2010  get_words.sh gfg.txt _gfg.txt
+ 2011  vi _gfg.txt 
+ 2012  rm _gfg.txt 
+ 2013  ll
+ 2014  for f in *.txt; do get_words.sh $f _$f; done
+ 2015  ll
+ 2016  vi _linuxhint.txt 
+ 2017  rm _*
+ 2018  for f in *.txt; do get_words.sh $f _$f; done
+ 2019  ll
+ 2020  vi _gfg
+ 2021  vi _gfg.txt 
+ 2022  comm _gfg.txt _linuxhint.txt | less
+ 2023  comm --total_gfg.txt _linuxhint.txt | less
+ 2024  comm --total _gfg.txt _linuxhint.txt | less
+ 2025  diff _gfg.txt  _linuxhint.txt 
+ 2026  diff _gfg.txt  _linuxhint.txt | les
+ 2027  diff _gfg.txt  _linuxhint.txt | less
+ 2028  ll
+ 2029  get_all_words.sh < gfg.txt | less
+ 2030  get_all_words.sh gfg.txt | less
+ 2031  get_all_words.sh gfg.txt > test.txt
+ 2032  vi test.txt 
+ 2033  touch words_ignore.txt
+ 2034  vi test.txt 
+ 2035  ll
+ 2036  man sed
+ 2037  ll
+ 2038  ls bin
+ 2039  ls ~/bin
+ 2040  vi ~/bin/get_words.sh 
+ 2041  ll
+ 2042  vi sort_words_ignore.txt 
+ 2043  ll
+ 2044  get_all_words.sh linuxhint.txt _linuxhint.txt
+ 2045  get_all_words.sh linuxhint.txt >_linuxhint.txt
+ 2046  vi _linuxhint.txt 
+ 2047  history
+ 2048  vi ~/bin/get_all_words.sh 
+ 2049  vi ~/bin/get_words.sh 
+ 2050  cd
+ 2051  cd eng/
+ 2052  ll
+ 2053  cd future/
+ 2054  ls
+ 2055  vi rules.md
+ 2056  ll
+ 2057  get_words.sh rules.md words.txt
+ 2058  vi words.txt 
+ 2059  touch words_ignore.txt
+ 2060  comm -23 words.txt ../voc/sort_words_ignore.txt >_words.txt
+ 2061  vi _words.txt 
+ 2062  man tr
+ 2063  man tac
+ 2064  ll
+ 2065  cat names_ignore.txt 
+ 2066  tac names_ignore.txt 
+ 2067  i_str="i love programming very much"
+ 2068  echo $i_str
+ 2069  tr "[:blank:]" "\n" <<< "$i_str" | tac | tr "\n" " "
+ 2070  man tac
+ 2071  tac -s " " <<< $i_str
+ 2072  tac -s " " <<< "$i_str"
+ 2073  tac -rs "[:blank:]" <<< "$i_str"
+ 2074  tac -r -s "[:blank:]" <<< "$i_str"
+ 2075  tac -r -s "[[:blank:]]" <<< "$i_str"
+ 2076  tac -rs "[[:blank:]]" <<< "$i_str"
+ 2077  tac -r -s "[[:blank:]]" <<< "$i_str"
+ 2078  echo $i_str
+ 2079  tac -r -s "[ ]" <<< "$i_str"
+ 2080  print -v i_str "i love programming very much"
+ 2081  printf -v i_str "i love programming very much"
+ 2082  echo -n $i_str
+ 2083  tac -r -s "[ ]" <<< "$i_str"
+ 2084  tac -rb -s "[ ]" <<< "$i_str"
+ 2085  tac -rb -s "[[:blank:]]" <<< "$i_str"
+ 2086  tac -r -s "[[:blank:]]" <<< "$i_str"
+ 2087  tac -r -s "[[:blank:]]\+" <<< "$i_str"
+ 2088  tac -r -s "[[:blank:]]" <<< "$i_str"
+ 2089  man tac
+ 2090  printf -v x_str "hello\nworld\n"
+ 2091  echo $x_str
+ 2092  echo "$x_str"
+ 2093  tac <<< "$x_str"
+ 2094  printf -v x_str "hello\nworld"
+ 2095  tac <<< "$x_str"
+ 2096  tac -b <<< "$x_str"
+ 2097  tac -r -s "[[:alpha:]]" <<< "$x_str"
+ 2098  REG_EXTENDED=1 tac -r -s "[[:alpha:]]" <<< "$x_str"
+ 2099  REG_EXTENDED=1 tac -r -s "[[:alpha:]]+" <<< "$x_str"
+ 2100  tac -r -s '[[:alpha:]]' <<< "$x_str"
+ 2101  tac -r -s '[a-z]' <<< "$x_str"
+ 2102  printf -v x_str "hello\nmy\nworld"
+ 2103  tac -s "my" <<< "$x_str"
+ 2104  tac -s -b "my" <<< "$x_str"
+ 2105  tac -b -s "my" <<< "$x_str"
+ 2106  tac -b -s "my" <<< "$i_str"
+ 2107  tac -b -s " " <<< "$i_str"
+ 2108  tac -s " " <<< "$i_str"
+ 2109  printf -v i_str "i love programming very much"
+ 2110  tac -s " " <<< "$i_str"
+ 2111  tac -s " " < <(echo -n "$i_str")
+ 2112  read -a arr <<< "$i_str"
+ 2113  for (i=${#arr[@])-1; i_str="i love programming very much"<0; --i); do
+ 2114  for ((i=${#arr[@])-1; i_str="i love programming very much"<0; --i)); do
+ 2115  for ((i=${#arr[@]}-1; i_str="i love programming very much"<0; --i)); do printf "%s " ${arr[i]}; done
+ 2116  for ((i=${#arr[@]}-1; i>=0; --i)); do printf "%s " ${arr[i]}; done
+ 2117  key="geeksforgeeks"
+ 2118  IFS="," read -a arr <<< "geeks,geek,geezer"
+ 2119  echo -n $arr
+ 2120  echo -n $arr[@]
+ 2121  echo -n ${arr[@]}
+ 2122  echo -n "${arr[@]}"
+ 2123  echo ${key:0:1}
+ 2124  echo ${key:0:2}
+ 2125  echo ${#key}
+ 2126  cd ~/bin
+ 2127  ls
+ 2128  vi scrap.py 
+ 2129  type python3
+ 2130  vi scrap.py 
+ 2131  chmod +x scrap.py 
+ 2132  scrap.py "https://stackoverflow.com/questions/52577700/using-tac-on-most-recent-log-file-out-of-several-log-files-in-a-directory"
+ 2133  cd ~/eng/voc
+ 2134  ls
+ 2135  rm *.bak
+ 2136  rm '&1' 
+ 2137  cat test.txt 
+ 2138  rm test.txt 
+ 2139  ll
+ 2140  scrap.py "https://stackoverflow.com/questions/52577700/using-tac-on-most-recent-log-file-out-of-several-log-files-in-a-directory" > results.txt
+ 2141  get_words.sh results.txt _words.tmp
+ 2142  vi _words.tmp 
+ 2143  comm -23 _words.tmp sort_words_ignore.txt 
+ 2144  comm -23 _words.tmp sort_words_ignore.txt | wc -l
+ 2145  comm -23 _words.tmp sort_words_ignore.txt >so_words.txt
+ 2146  vi so_words.txt 
+ 2147  man shopt
+ 2148  help shopt
+ 2149  man bash
+ 2150  shopt -p nullglob 
+ 2151  ll
+ 2152  echo *.dmg
+ 2153  shopt -s nullglob 
+ 2154  echo *.dmg
+ 2155  shopt -u nullglob
+ 2156  echo *.dmg
+ 2157  man bash
+ 2158  [["ab" > ""]] && echo "test"
+ 2159  [["ab" > ""]]; && echo "test"
+ 2160  [[ "ab" > "" ]] && echo test
+ 2161  [[ "ab" <  "" ]] && echo test
+ 2162  [[ "ab" > "abc" ]] && echo test
+ 2163  [[ "abc" > "abc" ]] && echo test
+ 2164  [[ "abd" > "abc" ]] && echo test
+ 2165  ll
+ 2166  cd ~
+ 2167  mkdir sandbox && cd sandbox
+ 2168  touch abc abd ab
+ 2169  echo *
+ 2170  echo ab.*
+ 2171  echo ab*
+ 2172  echo ab[[:alpha:]]
+ 2173  shopt -p
+ 2174  man rev
+ 2175  rev << "I love programming very much."
+ 2176  rev <<< "I love programming very much."
+ 2177  type mktemp
+ 2178  man mktemp
+ 2179  man command
+ 2180  help command
+ 2181  man comm
+ 2182  vi ~/eng/
+ 2183  mkdir ~/eng/past
+ 2184  vi ~/eng/past/rules.md
+ 2185  rand_col.sh 
+ 2186  ls /mnt
+ 2187  rand_col.sh >/mnt/o/words/words4.txt
+ 2188  man cp
+ 2189  mkdir ~/bash/bin
+ 2190  ls ~/bin
+ 2191  cd ~/bin
+ 2192  ls
+ 2193  rm ';' 
+ 2194  cat holes.txt 
+ 2195  cat tr_test.txt 
+ 2196  ls
+ 2197  cat here_result.txt 
+ 2198  ls
+ 2199  rm *.txt
+ 2200  ls
+ 2201  cp * ~/bash/bin
+ 2202  cd ~/bash
+ 2203  ls
+ 2204  git status
+ 2205  git add bin
+ 2206  git status
+ 2207  git commit -a -m "vocabulary scripts"
+ 2208  git push origin master
+ 2209  cd ~/eng
+ 2210  ls
+ 2211  git status
+ 2212  git add voc verbs nouns adjectives adverbs present past future/*
+ 2213  git status
+ 2214  git add be have
+ 2215  git commit -a -m "vocabulary"
+ 2216  git push origin master
+ 2217  history >history.txt
